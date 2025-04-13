@@ -1,16 +1,14 @@
+import { Dashboard } from "./components/dashboard"
+import { NavBar } from "./components/navBar"
+import { SideBar } from "./components/sideBar"
 
 const App = () => {
 
   return (
-      <div className="flex flex-col h-screen w-full justify-center items-center">
-        <div className="w-full p-[15px]">
-          <h1>Hello World</h1>
-        </div>
-
-        <h2>Hello World</h2>
-        <button>Hello World</button>
-        <span>Hello World</span>
-        <caption>Hello World</caption>
+      <div className="grid grid-cols-[90px_318px_1fr] h-screen w-full">
+        <NavBar />
+        <SideBar/>
+        <Dashboard/>
       </div>
   ) 
 }
