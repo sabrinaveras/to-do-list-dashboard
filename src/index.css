@@ -4,8 +4,6 @@
 :root{
   --color-dark: #1C1D22;
   --color-white: #FFFFFF;
-  --color-white-40: #FFFFFF40;
-  --color-white-20: #FFFFFF20;
 }
 
 @layer utilities{
@@ -27,14 +25,6 @@
 
   .bg-white{
     background-color: var(--color-white) !important;
-  }
-  
-  .bg-white-40{
-    background-color: var(--color-white-40) !important;
-  }
-
-  .bg-white-20{
-    background-color: var(--color-white-20) !important;
   }
 }
 

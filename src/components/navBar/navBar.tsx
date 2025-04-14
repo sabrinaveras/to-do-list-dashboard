@@ -3,8 +3,8 @@ export const NavBar = () => {
     <div className="bg-nav-bar-dark pt-[24px] flex flex-col items-center">
         <div className="flex justify-center gap-[8px] mb-[40px]">
             <div className="w-[6px] h-[6px] bg-white rounded-full"></div>
-            <div className="w-[6px] h-[6px] bg-white-40 rounded-full"></div>
-            <div className="w-[6px] h-[6px] bg-white-20 rounded-full"></div>
+            <div className="w-[6px] h-[6px] bg-white opacity-40 rounded-full"></div>
+            <div className="w-[6px] h-[6px] bg-white opacity-20 rounded-full"></div>
         </div>
 
         <div className="flex flex-col gap-[40px]">    
