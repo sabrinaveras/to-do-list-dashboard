@@ -1,5 +1,6 @@
 import { PlusIcon } from "@/design/icons";
 import { Select } from "../select";
+import { SwitchTheme } from "../switchTheme";
 
 export const SideBar = () => {
   const projectOptions = [
@@ -18,22 +19,25 @@ export const SideBar = () => {
 
   return (
     <div className="bg-side-panel px-[28px] py-[32px] flex flex-col gap-[28px]">
-      <div className="flex items-center justify-between pb-[32px]">
-        <h1 className="text-2xl font-bold">Projects</h1>
-        <div className="flex items-center justify-center w-[32px] h-[32px] bg-grey rounded-full">
-          <PlusIcon />
+      <div className="flex flex-col gap-[28px] h-full">
+        <div className="flex items-center justify-between pb-[32px]">
+          <h1 className="text-2xl font-bold">Projects</h1>
+          <div className="flex items-center justify-center w-[32px] h-[32px] bg-grey rounded-full">
+            <PlusIcon />
+          </div>
         </div>
-      </div>
 
-      <Select label="Team" options={[]} onChange={() => console.log("TODO")} />
-      <Select
-        label="Projects"
-        options={projectOptions}
-        onChange={(option) => console.log("Selected:", option)}
-      />
-      <Select label="Tasks" options={taskOptions} onChange={() => console.log("TODO")} />
-      <Select label="Reminders" options={[]} onChange={() => console.log("TODO")} />
-      <Select label="Messengers" options={[]} onChange={() => console.log("TODO")} />
+        <Select label="Team" options={[]} onChange={() => console.log("TODO")} />
+        <Select
+          label="Projects"
+          options={projectOptions}
+          onChange={(option) => console.log("Selected:", option)}
+        />
+        <Select label="Tasks" options={taskOptions} onChange={() => console.log("TODO")} />
+        <Select label="Reminders" options={[]} onChange={() => console.log("TODO")} />
+        <Select label="Messengers" options={[]} onChange={() => console.log("TODO")} />
+      </div>
+      <SwitchTheme />
     </div>
   );
 };

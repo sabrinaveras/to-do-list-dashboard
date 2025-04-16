@@ -9,3 +9,5 @@ export * from "./map";
 export * from "./setting";
 export * from "./logo";
 export * from "./exit";
+export * from "./moon";
+export * from "./sun";
