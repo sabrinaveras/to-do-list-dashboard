@@ -1,4 +1,4 @@
-import { Arrow } from "@/design/icons";
+import { ArrowIcon } from "@/design/icons";
 import { useState } from "react";
 
 interface SelectProps {
@@ -42,7 +42,7 @@ export const Select = ({ label, options, onChange }: SelectProps) => {
         <div
           className={`transform transition-transform duration-200 ${!hasOptions ? "opacity-50" : ""} ${isOpen ? "rotate-180" : ""}`}
         >
-          <Arrow />
+          <ArrowIcon />
         </div>
       </button>
 
