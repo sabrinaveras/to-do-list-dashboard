@@ -9,10 +9,10 @@ export const NavBarTop = () => {
       <div className="flex items-center gap-[22px]">
         <SearchIcon />
 
-        <NotificationIcon />
+        <NotificationIcon notification={true} />
 
         <div className="flex items-center gap-[3px]">
-          <CalenderIcon />
+          <CalenderIcon fill="var(--color-dark)" />
           <span className="">19 May 2022</span>
         </div>
 
