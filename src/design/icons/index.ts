@@ -11,3 +11,6 @@ export * from "./logo";
 export * from "./exit";
 export * from "./moon";
 export * from "./sun";
+export * from "./notification";
+export * from "./search";
+export * from "./profile";

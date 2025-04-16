@@ -1,1 +1,2 @@
-export * from './navBar'
+export * from "./navBarLeft";
+export * from "./navBarTop";

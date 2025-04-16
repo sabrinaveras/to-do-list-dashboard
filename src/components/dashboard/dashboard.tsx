@@ -1,3 +1,9 @@
+import { NavBarTop } from "../navBar";
+
 export const Dashboard = () => {
-    return <div className="bg-dashboard">Dashboard</div>
-}
+  return (
+    <div className="bg-dashboard">
+      <NavBarTop />
+    </div>
+  );
+};
