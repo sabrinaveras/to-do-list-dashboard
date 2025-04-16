@@ -1,36 +1,45 @@
 @import "tailwindcss/preflight";
 @import "tailwindcss/utilities";
 
-:root{
-  --color-dark: #1C1D22;
-  --color-white: #FFFFFF;
+:root {
+  --color-dark: #1c1d22;
+  --color-white: #ffffff;
+  --color-grey: #1c1d2210;
 }
 
-@layer utilities{
-  .color-custom-dark{
+@layer utilities {
+  .color-custom-dark {
     color: var(--color-dark) !important;
   }
 
-  .bg-nav-bar-dark{
+  .bg-nav-bar-dark {
     background-color: var(--color-dark) !important;
   }
 
-  .bg-side-panel{
+  .bg-side-panel {
     background-color: var(--color-white) !important;
   }
 
-  .bg-dashboard{
+  .bg-dashboard {
     background-color: var(--color-white) !important;
   }
 
-  .bg-white{
+  .bg-white {
     background-color: var(--color-white) !important;
+  }
+
+  .bg-grey {
+    background-color: var(--color-grey) !important;
+  }
+
+  .bg-dark {
+    background-color: var(--color-dark) !important;
   }
 }
 
 @layer base {
   h1 {
-    font-family: 'Exo 2', sans-serif;
+    font-family: "Exo 2", sans-serif;
     font-size: 30px !important;
     font-weight: 700 !important;
     line-height: 100%;
@@ -38,31 +47,31 @@
   }
 
   h2 {
-    font-family: 'Exo 2', sans-serif;
+    font-family: "Exo 2", sans-serif;
     font-size: 20px !important;
     font-weight: 700 !important;
     line-height: 100%;
     letter-spacing: 0px;
   }
 
-  button{
-    font-family: 'Exo 2', sans-serif;
+  button {
+    font-family: "Exo 2", sans-serif;
     font-size: 14px !important;
     font-weight: 500 !important;
     line-height: 100%;
     letter-spacing: 0px;
   }
 
-  span{
-    font-family: 'Exo 2', sans-serif;
+  span {
+    font-family: "Exo 2", sans-serif;
     font-size: 16px !important;
     font-weight: 700 !important;
     line-height: 100%;
     letter-spacing: 0px;
   }
 
-  caption{
-    font-family: 'Exo 2', sans-serif;
+  caption {
+    font-family: "Exo 2", sans-serif;
     font-size: 14px !important;
     font-weight: 600 !important;
     line-height: 100%;
