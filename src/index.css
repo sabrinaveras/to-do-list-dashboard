@@ -4,6 +4,7 @@
 :root {
   --color-dark: #1c1d22;
   --color-white: #ffffff;
+  --color-white-10: #ffffff10;
   --color-grey: #1c1d2210;
 }
 
@@ -34,6 +35,10 @@
 
   .bg-white {
     background-color: var(--color-white) !important;
+  }
+
+  .bg-white-10 {
+    background-color: var(--color-white-10) !important;
   }
 
   .bg-grey {
