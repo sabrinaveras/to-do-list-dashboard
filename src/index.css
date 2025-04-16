@@ -12,6 +12,14 @@
     color: var(--color-dark) !important;
   }
 
+  .color-custom-white {
+    color: var(--color-white) !important;
+  }
+
+  .color-custom-grey {
+    color: var(--color-grey) !important;
+  }
+
   .bg-nav-bar-dark {
     background-color: var(--color-dark) !important;
   }

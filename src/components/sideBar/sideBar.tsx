@@ -8,13 +8,24 @@ export const SideBar = () => {
     { id: "research", label: "UX research" },
   ];
 
+  const taskOptions = [
+    { id: "all", label: "All tasks (3)" },
+    { id: "toDo", label: "To do" },
+    { id: "inProgress", label: "In progress", selected: true },
+    { id: "done", label: "Done" },
+  ];
+
   return (
-    <div className="bg-side-panel px-[28px]">
+    <div className="bg-side-panel px-[28px] flex flex-col gap-[28px]">
+      <Select label="Team" options={[]} onChange={() => console.log("TODO")} />
       <Select
         label="Projects"
         options={projectOptions}
         onChange={(option) => console.log("Selected:", option)}
       />
+      <Select label="Tasks" options={taskOptions} onChange={() => console.log("TODO")} />
+      <Select label="Reminders" options={[]} onChange={() => console.log("TODO")} />
+      <Select label="Messengers" options={[]} onChange={() => console.log("TODO")} />
     </div>
   );
 };

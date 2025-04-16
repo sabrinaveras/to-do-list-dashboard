@@ -15,38 +15,39 @@ interface Option {
 
 export const Select = ({ label, options, onChange }: SelectProps) => {
   const [isOpen, setIsOpen] = useState(false);
-  // const [selectedOption, setSelectedOption] = useState<Option[]>(options.filter(option => option.selected))
+  const hasOptions = options.length > 0;
 
   const toggleDropdown = () => {
+    if (!hasOptions) return;
     setIsOpen(!isOpen);
   };
 
   const handleOptionClick = (option: Option) => {
     onChange(option);
-    // setSelectedOption([option])
     setIsOpen(false);
   };
 
   return (
-    <div className="relative w-full">
+    <div className="w-full">
       <button
         type="button"
         onClick={toggleDropdown}
-        className="flex items-center justify-between w-full px-[4px] py-[2px] mb-[8px] font-medium text-base"
+        disabled={!hasOptions}
+        className={`flex items-center justify-between w-full px-[4px] py-[2px] mb-[8px] text-base
+          ${!hasOptions ? "cursor-not-allowed text-gray-400" : "font-medium cursor-pointer"}`}
       >
         <div className="flex flex-col items-start">
-          <span className="font-medium">{label}</span>
+          <span className={`font-medium ${!hasOptions ? "opacity-50" : ""}`}>{label}</span>
         </div>
         <div
-          className={`transform transition-transform duration-200 ${isOpen ? "rotate-180" : ""}`}
+          className={`transform transition-transform duration-200 ${!hasOptions ? "opacity-50" : ""} ${isOpen ? "rotate-180" : ""}`}
         >
           <Arrow />
         </div>
       </button>
 
-      {/* dropdown */}
       <div
-        className={`absolute z-[10px] w-full mt-[1px] bg-white transform transition-all duration-200 ease-in-out ${isOpen ? "opacity-100 scale-y-100" : "opacity-0 scale-y-95 pointer-events-none"}`}
+        className={`w-full bg-white overflow-hidden transition-all duration-200 ease-in-out ${isOpen ? "max-h-[500px] opacity-100" : "max-h-[0px] opacity-[0px]"}`}
       >
         <div className="relative py-[12px]">
           {/* vertical line */}
