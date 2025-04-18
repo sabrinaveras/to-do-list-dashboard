@@ -8,10 +8,16 @@ import { Menu } from "../menu";
 import { Draggable, Droppable } from "../dragAndDrop";
 import { DndContext, DragEndEvent } from "@dnd-kit/core";
 
+interface CardProps {
+  id: string;
+  totalTask: number;
+  totalCompleted: number;
+}
+
 interface Container {
   id: string;
   label: string;
-  cards: string[];
+  cards: CardProps[];
 }
 
 export const Dashboard = () => {
@@ -19,55 +25,85 @@ export const Dashboard = () => {
     {
       id: "A",
       label: "To do",
-      cards: ["Card 1", "Card 2", "Card 3"],
+      cards: [
+        {
+          id: "1",
+          totalTask: 10,
+          totalCompleted: 5,
+        },
+        {
+          id: "2",
+          totalTask: 10,
+          totalCompleted: 2,
+        },
+      ],
     },
     {
       id: "B",
       label: "In progress",
-      cards: ["Card 1"],
+      cards: [
+        {
+          id: "1",
+          totalTask: 14,
+          totalCompleted: 7,
+        },
+      ],
     },
     {
       id: "C",
       label: "Done",
-      cards: ["Card 1", "Card 2"],
+      cards: [
+        {
+          id: "1",
+          totalTask: 10,
+          totalCompleted: 10,
+        },
+        {
+          id: "2",
+          totalTask: 12,
+          totalCompleted: 9,
+        },
+      ],
     },
   ]);
 
   const handleDragEnd = (event: DragEndEvent) => {
     const { active, over } = event;
 
-    if (over && active.id !== over.id) {
-      const activeContainer = containers.find((container) =>
-        container.cards.some((_, index) => `${container.id}-${index}` === active.id)
+    if (!over) return;
+
+    const activeContainer = containers.find((container) =>
+      container.cards.some((card) => `${container.id}-${card.id}` === active.id)
+    );
+
+    const overContainer = containers.find((container) => container.id === over.id);
+
+    if (activeContainer && overContainer) {
+      const activeIndex = activeContainer.cards.findIndex(
+        (card) => `${activeContainer.id}-${card.id}` === active.id
       );
 
-      const overContainer = containers.find((container) => container.id === over.id);
+      if (activeIndex === -1) return;
 
-      if (activeContainer && overContainer) {
-        const activeIndex = activeContainer.cards.findIndex(
-          (_, index) => `${activeContainer.id}-${index}` === active.id
-        );
+      const cardToMove = activeContainer.cards[activeIndex];
 
-        const cardToMove = activeContainer.cards[activeIndex];
-
-        setContainers(
-          containers.map((container) => {
-            if (container.id === activeContainer.id) {
-              return {
-                ...container,
-                cards: container.cards.filter((_, index) => index !== activeIndex),
-              };
-            }
-            if (container.id === overContainer.id) {
-              return {
-                ...container,
-                cards: [...container.cards, cardToMove],
-              };
-            }
-            return container;
-          })
-        );
-      }
+      setContainers(
+        containers.map((container) => {
+          if (container.id === activeContainer.id) {
+            return {
+              ...container,
+              cards: container.cards.filter((_, index) => index !== activeIndex),
+            };
+          }
+          if (container.id === overContainer.id) {
+            return {
+              ...container,
+              cards: [...container.cards, cardToMove],
+            };
+          }
+          return container;
+        })
+      );
     }
   };
 
@@ -77,7 +113,14 @@ export const Dashboard = () => {
         if (container.id === containerId) {
           return {
             ...container,
-            cards: [...container.cards, `Card ${container.cards.length + 1}`],
+            cards: [
+              ...container.cards,
+              {
+                id: `${container.cards.length + 1}`,
+                totalTask: 10,
+                totalCompleted: 6,
+              },
+            ],
           };
         }
         return container;
@@ -98,8 +141,8 @@ export const Dashboard = () => {
             </span>
           </div>
 
-          <div className="flex border-b-[3px] border-solid border-dark pb-[12px]">
-            <span className="flex items-center gap-[4px]">
+          <div className="flex pb-[12px]">
+            <span className="flex items-center gap-[4px] color-custom-dark-50">
               <div className="w-[18px] h-[18px] flex bg-grey rounded-full items-center justify-center">
                 <PlusIcon />
               </div>
@@ -127,9 +170,9 @@ export const Dashboard = () => {
               addCard={addCard}
             >
               <div className="flex flex-col gap-[16px]">
-                {container.cards.map((_, index) => (
+                {container.cards.map((card, index) => (
                   <Draggable key={`${container.id}-${index}`} id={`${container.id}-${index}`}>
-                    <Card />
+                    <Card totalTask={card.totalTask} totalCompleted={card.totalCompleted} />
                   </Draggable>
                 ))}
               </div>

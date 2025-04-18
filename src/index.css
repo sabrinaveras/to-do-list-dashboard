@@ -11,8 +11,8 @@
   --color-dark-card: #292b31;
   --color-light-card: #ffffff;
 
-  --color-orange: #FFA048;
-  --color-orange-10: #FFA04810;
+  --color-orange: #ffa048;
+  --color-orange-10: #ffa04810;
 }
 
 @layer utilities {
@@ -63,8 +63,6 @@
   .bg-dark {
     background-color: var(--color-dark) !important;
   }
-
-  {/* card */}
 
   .bg-card-dark {
     background-color: var(--color-dark-card) !important;
