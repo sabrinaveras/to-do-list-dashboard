@@ -14,3 +14,4 @@ export * from "./sun";
 export * from "./notification";
 export * from "./search";
 export * from "./profile";
+export * from "./boardView";
