@@ -11,7 +11,7 @@ export const NavBarTop = () => {
 
         <NotificationIcon notification={true} />
 
-        <div className="flex items-center gap-[3px]">
+        <div className="flex items-center gap-[8px]">
           <CalenderIcon fill="var(--color-dark)" />
           <span className="">19 May 2022</span>
         </div>
