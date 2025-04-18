@@ -15,3 +15,6 @@ export * from "./notification";
 export * from "./search";
 export * from "./profile";
 export * from "./boardView";
+export * from "./comment";
+export * from "./attachment";
+export * from "./hamburger";
