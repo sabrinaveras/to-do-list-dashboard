@@ -13,6 +13,10 @@
     color: var(--color-dark) !important;
   }
 
+  .border-grey {
+    border-color: var(--color-grey) !important;
+  }
+
   .color-custom-white {
     color: var(--color-white) !important;
   }
