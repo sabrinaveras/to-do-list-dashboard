@@ -3,14 +3,25 @@
 
 :root {
   --color-dark: #1c1d22;
+  --color-dark-50: #1c1d2250;
   --color-white: #ffffff;
   --color-white-10: #ffffff10;
   --color-grey: #1c1d2210;
+
+  --color-dark-card: #292b31;
+  --color-light-card: #ffffff;
+
+  --color-orange: #FFA048;
+  --color-orange-10: #FFA04810;
 }
 
 @layer utilities {
   .color-custom-dark {
     color: var(--color-dark) !important;
+  }
+
+  .color-custom-dark-50 {
+    color: var(--color-dark-50) !important;
   }
 
   .border-grey {
@@ -51,6 +62,32 @@
 
   .bg-dark {
     background-color: var(--color-dark) !important;
+  }
+
+  {/* card */}
+
+  .bg-card-dark {
+    background-color: var(--color-dark-card) !important;
+  }
+
+  .bg-card-light {
+    background-color: var(--color-light-card) !important;
+  }
+
+  .bg-orange {
+    background-color: var(--color-orange) !important;
+  }
+
+  .bg-orange-10 {
+    background-color: var(--color-orange-10) !important;
+  }
+
+  .color-custom-orange-10 {
+    color: var(--color-orange-10) !important;
+  }
+
+  .color-custom-orange {
+    color: var(--color-orange) !important;
   }
 }
 
