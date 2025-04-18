@@ -1,6 +1,8 @@
 import { BoardViewIcon, PlusIcon } from "@/design/icons";
 import { Button } from "../button";
 import { NavBarTop } from "../navBar";
+import { Card } from "../card";
+import { Menu } from "../menu";
 
 export const Dashboard = () => {
   return (
@@ -29,13 +31,13 @@ export const Dashboard = () => {
         <div className="flex items-center gap-[16px]">
           <span>Filter</span>
           <span>Sort</span>
-          <div className="flex items-center gap-[3px] border-[4px] border-solid border-grey rounded-full px-[6px] py-[12px]">
-            <div className="w-[3px] h-[3px] bg-dark rounded-full"></div>
-            <div className="w-[3px] h-[3px] bg-dark rounded-full"></div>
-            <div className="w-[3px] h-[3px] bg-dark rounded-full"></div>
-          </div>
+          <Menu />
           <Button label="New template" />
         </div>
+      </div>
+
+      <div>
+        <Card />
       </div>
     </div>
   );
