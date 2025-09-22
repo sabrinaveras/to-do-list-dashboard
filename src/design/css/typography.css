@@ -1,0 +1,100 @@
+/* Variáveis de tipografia */
+:root {
+  /* Família de fonte */
+  --font-family-primary: "Exo 2", sans-serif;
+
+  /* Tamanhos de fonte */
+  --font-size-xs: 14px; /* caption, button */
+  --font-size-sm: 16px; /* span */
+  --font-size-lg: 20px; /* h2 */
+  --font-size-xl: 30px; /* h1 */
+
+  /* Pesos de fonte */
+  --font-weight-medium: 500; /* button */
+  --font-weight-semibold: 600; /* caption */
+  --font-weight-bold: 700; /* h1, h2, span */
+
+  /* Line heights */
+  --line-height-none: 100%;
+
+  /* Letter spacing */
+  --letter-spacing-none: 0px;
+}
+
+/* Configurações base de tipografia */
+@layer base {
+  h1 {
+    font-family: var(--font-family-primary);
+    font-size: var(--font-size-xl) !important;
+    font-weight: var(--font-weight-bold) !important;
+    line-height: var(--line-height-none);
+    letter-spacing: var(--letter-spacing-none);
+  }
+
+  h2 {
+    font-family: var(--font-family-primary);
+    font-size: var(--font-size-lg) !important;
+    font-weight: var(--font-weight-bold) !important;
+    line-height: var(--line-height-none);
+    letter-spacing: var(--letter-spacing-none);
+  }
+
+  button {
+    font-family: var(--font-family-primary);
+    font-size: var(--font-size-xs) !important;
+    font-weight: var(--font-weight-medium) !important;
+    line-height: var(--line-height-none);
+    letter-spacing: var(--letter-spacing-none);
+  }
+
+  span {
+    font-family: var(--font-family-primary);
+    font-size: var(--font-size-sm) !important;
+    font-weight: var(--font-weight-bold) !important;
+    line-height: var(--line-height-none);
+    letter-spacing: var(--letter-spacing-none);
+  }
+
+  caption {
+    font-family: var(--font-family-primary);
+    font-size: var(--font-size-xs) !important;
+    font-weight: var(--font-weight-semibold) !important;
+    line-height: var(--line-height-none);
+    letter-spacing: var(--letter-spacing-none);
+  }
+}
+
+/* Utilities de tipografia */
+@layer utilities {
+  .font-primary {
+    font-family: var(--font-family-primary) !important;
+  }
+
+  .text-xs {
+    font-size: var(--font-size-xs) !important;
+  }
+
+  .text-sm {
+    font-size: var(--font-size-sm) !important;
+  }
+
+  .text-lg {
+    font-size: var(--font-size-lg) !important;
+  }
+
+  .text-xl {
+    font-size: var(--font-size-xl) !important;
+  }
+
+  .font-medium {
+    font-weight: var(--font-weight-medium) !important;
+  }
+
+  .font-semibold {
+    font-weight: var(--font-weight-semibold) !important;
+  }
+
+  .font-bold {
+    font-weight: var(--font-weight-bold) !important;
+  }
+}
